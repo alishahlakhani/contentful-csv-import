@@ -31,3 +31,22 @@ The script will perform the following actions:
 1. Check for an experimental environment and delete and recreate one as necessary
 1. For each item in the array, create a new 'animal' entry
 1. Publish the entries
+
+
+## [Optional] transformations 
+1. Create `actions.js`
+2. Added transformation functions for each column
+```javascript
+// actions.js
+module.exports.transformations = {
+    // Use the key to transform followed by a function which has value as input
+    description: (value) => {
+        var separateWord = value.toLowerCase().split(' ');
+        for (var i = 0; i < separateWord.length; i++) {
+            separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+                separateWord[i].substring(1);
+        }
+        return separateWord.join(' ');
+    }
+}
+```
