@@ -13,8 +13,20 @@ npm i
 Add a credentials.js file at the root of the project with the following:
 
 ```javascript
-module.exports.CMA_TOKEN = "your_cma_token;
-module.exports.SPACE_ID = "your_space_id";
+// credentials.js
+module.exports.CMA_TOKEN = "your cma token";
+module.exports.SPACE_ID = "your space id";
+module.exports.CONTENT_TYPE_NAME = "content type to add to";
+// You can set this to null to push directly to array. By default Contentful sets it to "en-US". Change it to push content to other langs
+module.exports.DEFAULT_LOCALE = "en-US";
+// CSV file location
+module.exports.FILE_PATH = "./resources/animals.csv";
+// Set this to TRUE to run a dry run
+module.exports.DRY_RUN = true;
+// Do you want to create a new environment?
+// This will remove the EXPERIMENTAL_ENV_NAME environment and create a new one
+module.exports.OVERRIDE_ENV = false;
+module.exports.ENV_NAME = "your env name";
 ```
 
 ## To run this script, navigate to the project root and run:
